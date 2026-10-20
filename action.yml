@@ -39,5 +39,5 @@ outputs:
   report-path:
     description: 'Path to the Markdown report file.'
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'src/main.js'
