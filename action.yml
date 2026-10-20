@@ -1,0 +1,43 @@
+name: 'CI Step Timing Report'
+description: 'Compare every job and step duration in this run against the median of recent successful runs. Flags regressions in the job summary and on the PR.'
+author: 'Adam Gibbons'
+branding:
+  icon: 'clock'
+  color: 'orange'
+inputs:
+  token:
+    description: 'GitHub token. Needs actions:read; pull-requests:write if comment-on-pr is true.'
+    default: ${{ github.token }}
+  baseline-runs:
+    description: 'How many recent successful runs of this workflow to use as the baseline.'
+    default: '10'
+  baseline-branch:
+    description: 'Branch whose runs form the baseline. Defaults to the repository default branch.'
+    default: ''
+  threshold-percent:
+    description: 'Flag a job or step when it is at least this many percent slower than the baseline median.'
+    default: '25'
+  threshold-seconds:
+    description: 'Also require at least this many seconds of slowdown before flagging, so tiny steps do not trigger noise.'
+    default: '10'
+  comment-on-pr:
+    description: 'Post (and keep updated) a single comment on the pull request with the report.'
+    default: 'true'
+  fail-on-regression:
+    description: 'Fail this step when any job or step regressed beyond both thresholds.'
+    default: 'false'
+  exclude-jobs:
+    description: 'Comma-separated job names (or name prefixes ending in *) to leave out of the comparison.'
+    default: ''
+outputs:
+  regressions:
+    description: 'Number of jobs and steps that regressed beyond the thresholds.'
+  total-seconds:
+    description: 'Sum of completed job durations in this run.'
+  baseline-seconds:
+    description: 'Median of the same sum across the baseline runs (empty if no baseline).'
+  report-path:
+    description: 'Path to the Markdown report file.'
+runs:
+  using: 'node20'
+  main: 'src/main.js'
