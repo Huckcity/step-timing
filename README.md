@@ -4,6 +4,8 @@ A GitHub Action that compares every job and step in the current workflow run aga
 
 It answers "did this PR make CI slower, and where?" without a dashboard, a SaaS account, or any infrastructure. Zero dependencies; it only calls the GitHub REST API you already have a token for.
 
+![Example PR comment: 2 regressions flagged, with job and step tables](docs/example.png)
+
 
 ## Usage
 
