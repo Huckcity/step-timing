@@ -33,6 +33,7 @@ export function summariseRun(jobs, { excludeJobs = [] } = {}) {
     for (const s of j.steps || []) {
       if (s.status !== 'completed' || !s.started_at || !s.completed_at) continue;
       if (s.conclusion === 'skipped') continue;
+      if (s.name === 'Set up job' || s.name === 'Complete job') continue; // runner housekeeping, never actionable
       // Steps can repeat names (e.g. several "Run npm test"); disambiguate by order of appearance.
       let key = s.name, i = 2;
       while (steps.has(key)) key = `${s.name} (${i++})`;
