@@ -1,5 +1,5 @@
 name: 'CI Step Timing Report'
-description: 'Compare every job and step duration in this run against the median of recent successful runs. Flags regressions in the job summary and on the PR.'
+description: 'Flag CI jobs and steps that got slower than the median of recent runs, in the job summary and PR comment.'
 author: 'Adam Gibbons'
 branding:
   icon: 'clock'
