@@ -76,3 +76,7 @@ The baseline is the last `baseline-runs` (default 10) successful runs of the sam
 ## Support
 
 Free and MIT licensed. If it saves you time, [sponsor the maintainer](https://github.com/sponsors/Huckcity). For CI performance work on a whole estate (Jenkins or Actions), email adam.p.gibbons@gmail.com.
+
+## Related
+
+[CI Cost Report](https://github.com/marketplace/actions/ci-cost-report) prices every workflow run at GitHub per-minute rates and shows where the money goes; this action shows where the time goes.
