@@ -79,4 +79,4 @@ Free and MIT licensed. If it saves you time, [sponsor the maintainer](https://gi
 
 ## Related
 
-[CI Cost Report](https://github.com/marketplace/actions/ci-cost-report) prices every workflow run at GitHub per-minute rates and shows where the money goes; this action shows where the time goes.
+[CI Cost Report](https://github.com/marketplace/actions/ci-cost-report) prices every workflow run at GitHub per-minute rates and shows where the money goes; this action shows where the time goes. [Skip Unchanged](https://github.com/marketplace/actions/skip-unchanged) stops nightly schedules rebuilding commits that already passed.
